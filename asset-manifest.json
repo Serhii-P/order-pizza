@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/order-pizza/static/css/main.d98c22f2.css",
+    "main.js": "/order-pizza/static/js/main.15b51ba7.js",
+    "static/media/empty-cart.png": "/order-pizza/static/media/empty-cart.db905d1f4b063162f25b.png",
+    "index.html": "/order-pizza/index.html",
+    "main.d98c22f2.css.map": "/order-pizza/static/css/main.d98c22f2.css.map",
+    "main.15b51ba7.js.map": "/order-pizza/static/js/main.15b51ba7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d98c22f2.css",
+    "static/js/main.15b51ba7.js"
+  ]
+}
