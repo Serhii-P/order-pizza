@@ -20,7 +20,6 @@ export interface PizzaSliceState {
   status: Status;
 } 
 
-// type SearchPizzaParams = Record<string, string>;
 export type SearchPizzaParams = {
   category: string;
    search: string;

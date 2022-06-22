@@ -3,7 +3,6 @@ import { calcTotalPrice } from '../../utils/calcTotalPrice';
 import { getCartFromLS } from '../../utils/getCartFromLS';
 import { CartItem, CartSliceState } from './types';
 
-// const initialState: CartSliceState = getCartFromLS();
 const cartData = getCartFromLS();
 
 const initialState: CartSliceState = {
@@ -28,9 +27,6 @@ const initialState: CartSliceState = {
         })
       }
       state.totalPrice = calcTotalPrice(state.items);
-      // state.totalPrice = state.items.reduce((sum, obj) => {
-      //   return (obj.price * obj.count) + sum
-      // }, 0)
     },
     minusItem: (state, action: PayloadAction<string>) => {
       const findItem = state.items.find((obj) => obj.id === action.payload);

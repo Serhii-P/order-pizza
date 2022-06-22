@@ -1,5 +1,5 @@
 
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import NotFoundBlock from './components/NotFoundBlock';
 import Cart from './pages/Cart';
@@ -8,9 +8,6 @@ import MainLayout from './layouts/MainLayout';
 import './scss/app.scss';
 
 const App: React.FC = () => {
-
-// const {pathname} = useLocation();
-// const foopath = pathname === "/order-pizza/" ? "/" : "/"
 
 return (
     <Routes>

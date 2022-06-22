@@ -13,9 +13,6 @@ import { useAppDispatch } from '../redux/store';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
-  // const navigate = useNavigate();
-  // // const isSearch = useRef(false);
-  // const isMounted = useRef(false);
 
   const {categoryId, sort, currentPage, searchValue} = useSelector(selectFilter);
   const {items, status} = useSelector(selectPizzaData)
@@ -28,37 +25,6 @@ const Home: React.FC = () => {
     dispatch(setCurrentPage(page))
   }
 
-//   useEffect(() => {
-//     if (isMounted.current) {
-//      const queryString = qs.stringify({
-//        sortProperty: sort.sortProperty,
-//        categoryId,
-//        currentPage
-//      })
-   
-//      navigate(`?${queryString}`)
-//     }
-//     isMounted.current = true;
-//    }, [categoryId, currentPage, sort.sortProperty]);
-   
-
-// useEffect(() => {
-// if(window.location.search) {
-//   const params = qs.parse(window.location.search.substring(1)) as unknown as SearchPizzaParams;
-//   const sort = sortList.find(obj => obj.sortProperty === params.sortBy) 
-
-// dispatch(setFilters({
-//   categoryId:  Number(params.category),
-//   currentPage: Number(params.currentPage),
-//   searchValue: params.search,
-//   sort: sort || sortList[0],
-// }))
-//   isSearch.current = true;
-// }
-// }, []);
-
-
-
 const getPizzas = async () => {
   const sortBy = sort.sortProperty.replace('-', '');
   const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
@@ -69,40 +35,12 @@ const getPizzas = async () => {
     fetchPizzas({
     category, search, sortBy, order, currentPage: String(currentPage)
   }))
-    // try {
-    //   dispatch(fetchPizzas({
-    //     category, search, sortBy, order, currentPage
-    //   }))
-    // }
-    // catch (err) {
-    //   console.log(err);
-    // }
-    // finally {
-    //    setIsLoading(false);
-    // }
     window.scrollTo(0, 0);
   }
 
 useEffect(() => {
       getPizzas();
 }, [categoryId, sort.sortProperty, searchValue, currentPage]);
-
-
-// const pizzas =  items.filter((obj: any) => {
-//   if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-//     return true;
-//   } 
-//   return false
-// }).map((obj: any) => (
-//   // use spread instead of passing each value
-//       <PizzaBlock key={obj.id} {...obj}
-//         // title={obj.title}
-//         // price={obj.price}
-//         // imageUrl={obj.imageUrl}
-//         // sizes={obj.sizes}
-//         // types={obj.types}
-//       />
-//     ));
 
     const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />);
     const skeleton = [...new Array(6)].map((_, index) => <Skeleton key={index}/>)

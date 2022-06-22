@@ -7,7 +7,6 @@ export type CartItem = {
   count: number;
   imageUrl: string;
 }
-
 export interface CartSliceState {
   totalPrice: number;
   items: CartItem[];
