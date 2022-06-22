@@ -9,12 +9,12 @@ import './scss/app.scss';
 
 const App: React.FC = () => {
 
-const {pathname} = useLocation();
-const foopath = pathname === "/order-pizza/" ? "/" : "/"
+// const {pathname} = useLocation();
+// const foopath = pathname === "/order-pizza/" ? "/" : "/"
 
 return (
     <Routes>
-      <Route path={foopath} element={<MainLayout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route path="" element={<Home />} />
         <Route path="pizza/:id" element={<FullPizza />} />
         <Route path="cart" element={<Cart />} />
