@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/order-pizza/static/css/main.d7197a54.css",
-    "main.js": "/order-pizza/static/js/main.52c16b24.js",
+    "main.js": "/order-pizza/static/js/main.e22ec072.js",
     "static/media/pizza-logo.png": "/order-pizza/static/media/pizza-logo.b36bea9189a518902a66.png",
     "static/media/empty-cart.png": "/order-pizza/static/media/empty-cart.db905d1f4b063162f25b.png",
     "index.html": "/order-pizza/index.html",
     "main.d7197a54.css.map": "/order-pizza/static/css/main.d7197a54.css.map",
-    "main.52c16b24.js.map": "/order-pizza/static/js/main.52c16b24.js.map"
+    "main.e22ec072.js.map": "/order-pizza/static/js/main.e22ec072.js.map"
   },
   "entrypoints": [
     "static/css/main.d7197a54.css",
-    "static/js/main.52c16b24.js"
+    "static/js/main.e22ec072.js"
   ]
 }
