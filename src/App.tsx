@@ -10,7 +10,7 @@ import './scss/app.scss';
 const App: React.FC = () => {
 
 const {pathname} = useLocation();
-const foopath = pathname === "/order-pizza" ? "/order-pizza" : "/"
+const foopath = pathname === "/order-pizza/" ? "/" : "/"
 
 return (
     <Routes>
