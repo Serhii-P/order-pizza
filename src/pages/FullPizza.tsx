@@ -30,7 +30,7 @@ const FullPizza: React.FC = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container full-page__container'>
       <img src={pizza.imageUrl} alt={pizza.title} />
       <h2>{pizza.title}</h2>
       <h4>{pizza.price} $</h4>

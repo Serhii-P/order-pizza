@@ -1,5 +1,5 @@
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from './pages/Home';
 import NotFoundBlock from './components/NotFoundBlock';
 import Cart from './pages/Cart';
@@ -7,33 +7,21 @@ import FullPizza from './pages/FullPizza';
 import MainLayout from './layouts/MainLayout';
 import './scss/app.scss';
 
-// https://62987937f2decf5bb74365d0.mockapi.io
+const App: React.FC = () => {
 
-const App = () => {
-  <Routes>
-  {/* return ( */}
-    {["/", "/order-pizza/"].map((path, index) => {
-      return (
-        <Route key={index} path={path} element={<MainLayout />}>
-          <Route path="" element={<Home />} />
-          <Route path="pizza/:id" element={<FullPizza />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="*" element={<NotFoundBlock />} />
-        </Route>
-      );
-    })}
-      </Routes>
+const {pathname} = useLocation();
+const foopath = pathname === "/order-pizza" ? "/order-pizza" : "/"
 
-
-    // <Routes>
-    //   <Route path="/" element={<MainLayout />}>
-    //     <Route path="" element={<Home />} />
-    //     <Route path="pizza/:id" element={<FullPizza />} />
-    //     <Route path="cart" element={<Cart />} />
-    //     <Route path="*" element={<NotFoundBlock />} />
-    //   </Route>
-    // </Routes>
-    // );
+return (
+    <Routes>
+      <Route path={foopath} element={<MainLayout />}>
+        <Route path="" element={<Home />} />
+        <Route path="pizza/:id" element={<FullPizza />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="*" element={<NotFoundBlock />} />
+      </Route>
+    </Routes>
+    );
 }
 
 export default App;
