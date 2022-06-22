@@ -10,16 +10,30 @@ import './scss/app.scss';
 // https://62987937f2decf5bb74365d0.mockapi.io
 
 const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route path="" element={<Home />} />
-        <Route path="pizza/:id" element={<FullPizza />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="*" element={<NotFoundBlock />} />
-      </Route>
-    </Routes>
-  );
+  <Routes>
+  {/* return ( */}
+    {["/", "/order-pizza/"].map((path, index) => {
+      return (
+        <Route key={index} path={path} element={<MainLayout />}>
+          <Route path="" element={<Home />} />
+          <Route path="pizza/:id" element={<FullPizza />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="*" element={<NotFoundBlock />} />
+        </Route>
+      );
+    })}
+      </Routes>
+
+
+    // <Routes>
+    //   <Route path="/" element={<MainLayout />}>
+    //     <Route path="" element={<Home />} />
+    //     <Route path="pizza/:id" element={<FullPizza />} />
+    //     <Route path="cart" element={<Cart />} />
+    //     <Route path="*" element={<NotFoundBlock />} />
+    //   </Route>
+    // </Routes>
+    // );
 }
 
 export default App;
